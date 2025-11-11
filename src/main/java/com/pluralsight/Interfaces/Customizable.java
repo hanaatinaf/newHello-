@@ -1,6 +1,6 @@
-package com.plursalsight.Interfaces;
+package com.pluralsight.Interfaces;
 
-import com.plursalsight.Abstract.Topping;
+import com.pluralsight.Abstract.Topping;
 
 public interface Customizable {
     void addTopping(Topping topping); // add topping

@@ -1,4 +1,4 @@
-package com.plursalsight.Enum;
+package com.pluralsight.Enum;
 // Enum Representing the avalable sizes for products
 
 public enum Size {

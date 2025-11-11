@@ -1,7 +1,7 @@
-package com.plursalsight.Abstract;
+package com.pluralsight.Abstract;
 
-import com.plursalsight.Enum.Size;
-import com.plursalsight.Interfaces.Priceable;
+import com.pluralsight.Enum.Size;
+import com.pluralsight.Interfaces.Priceable;
 
 public abstract class Product  implements Priceable {
     // private fields with protected accessors

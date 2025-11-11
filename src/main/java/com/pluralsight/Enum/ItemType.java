@@ -1,4 +1,4 @@
-package com.plursalsight.Enum;
+package com.pluralsight.Enum;
 
 public enum  ItemType {
     INJERA_COMBO("Injera Combo"),

@@ -1,4 +1,4 @@
-package com.plursalsight.Interfaces;
+package com.pluralsight.Interfaces;
 // interface for price calculation
 // hiding implenation deatils
 

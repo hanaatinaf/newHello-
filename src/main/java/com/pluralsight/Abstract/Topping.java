@@ -1,6 +1,6 @@
-package com.plursalsight.Abstract;
+package com.pluralsight.Abstract;
 
-import com.plursalsight.Enum.Size;
+import com.pluralsight.Enum.Size;
 
 public abstract  class Topping {
     // protected fields for sub access
