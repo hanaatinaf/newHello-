@@ -4,6 +4,7 @@ import com.pluralsight.Abstract.Product;
 import com.pluralsight.Enum.Size;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.*;
 
@@ -62,9 +63,17 @@ public class Order  {
     public  void completeOrder(){
         this.isCompleted = true;
     }
+    //  to genarte a simple recipt text  we can write to file letter
     public String generateReceipt(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        StringBuilder builder = new StringBuilder();
+        builder.append("Order ID " ).append(Id).append("\n");
+        builder.append("Date: ").append(dateAndTime.format(formatter)).append("\n");
+        builder.append("Iteam: \n ");
 
-        return "";
+
+
+
     }
 
 
