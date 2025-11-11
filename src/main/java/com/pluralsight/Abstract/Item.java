@@ -16,26 +16,12 @@ public abstract  class Item extends  Product implements Customizable {
         this.type = type;
     }
 
-    public  ItemType getType(){
+    public  ItemType getType(){ return type;};
+    public  void setType(ItemType type){ this.type = type;}
+    public List<Topping> getToppings(){ return toppings;};
+    public  boolean isSpecialized(){ return isSpecialized; }
+    public  void setSpecialized(boolean specialized){ isSpecialized = specialized; }
 
-        return type;
-    };
-    public  void setType(ItemType type){
-        this.type = type;
-
-    }
-    public List<Topping> getToppings(){
-
-        return toppings;
-    };
-   public  boolean isSpecialized(){
-
-        return isSpecialized;
-    }
-    public  void setSpecialized(boolean specialized){
-       isSpecialized = specialized;
-
-    }
     @Override
     public void addTopping(Topping topping){
        toppings.add(topping);

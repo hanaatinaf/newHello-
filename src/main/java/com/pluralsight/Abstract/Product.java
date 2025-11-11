@@ -5,7 +5,6 @@ import com.pluralsight.Interfaces.Priceable;
 
 public abstract class Product  implements Priceable {
     // private fields with protected accessors
-
     private String name;
     private Size size;
 

@@ -6,5 +6,5 @@ package com.pluralsight.Interfaces;
 public interface Priceable {
     // calcuates the price of the iteam
     // returns total price as double 
-    double calaulatePrice();
+    double calculatePrice() ;
 }
