@@ -11,6 +11,20 @@ public class EthiopianFoodItem extends Item {
         super(type,  size, type.getDisplayName() );
     }
 
+    //Methods
+    public static EthiopianFoodItem createBeyaynetu(Size size){
+        return new EthiopianFoodItem(ItemType.BEYAYNETU,size);
+    }
+    public static EthiopianFoodItem createTibsPlate(Size size){
+        return new EthiopianFoodItem(ItemType.TIBS_PLATE,size);
+    }
+    public static EthiopianFoodItem createKitfoPlate(Size size){
+        return new EthiopianFoodItem(ItemType.KITFO_PLATE,size);
+    }
+    public static EthiopianFoodItem createInjeraCombo(Size size){
+        return new EthiopianFoodItem(ItemType.INJERA_COMBO,size);
+    }
+
     @Override
     public double calculatePrice() {
         double basePrice = 0.0;

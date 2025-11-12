@@ -3,10 +3,12 @@ package com.pluralsight.Classes;
 import com.pluralsight.Abstract.Topping;
 import com.pluralsight.Enum.Size;
 
-public class PermiumTopping extends Topping {
+public class PremiumTopping extends Topping {
     private  boolean isExtra;
-    public PermiumTopping(String name, double priceSmall, double priceMedium, double priceLarge) {
+
+    public PremiumTopping(String name, double priceSmall, double priceMedium, double priceLarge, boolean isExtra) {
         super(name, priceSmall, priceMedium, priceLarge);
+        this.isExtra = isExtra;
     }
 
     public boolean isExtra() {
@@ -20,7 +22,7 @@ public class PermiumTopping extends Topping {
     public  double getPrice(Size size){
         double basePrice = super.getPrice(size);
 
-        // extra premim cost +4 regardeless of the size
+        // extra premium cost +4 regardless  of the size
         if (isExtra){
             return  basePrice + 4;
         }
