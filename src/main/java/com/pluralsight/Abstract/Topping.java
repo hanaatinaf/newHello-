@@ -2,11 +2,6 @@ package com.pluralsight.Abstract;
 
 import com.pluralsight.Enum.Size;
 
-
-/**
- * Base class for all toppings (regular and premium).
- * Stores a name and separate prices for each size.
- */
 public abstract class Topping {
 
     private String name;
@@ -18,7 +13,7 @@ public abstract class Topping {
         this.name = name;
     }
 
-    // --- Name getters / setters ---
+
 
     public String getName() {
         return name;
