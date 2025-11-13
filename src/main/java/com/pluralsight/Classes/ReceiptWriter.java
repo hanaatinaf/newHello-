@@ -1,53 +1,69 @@
 package com.pluralsight.Classes;
 
+
 import java.io.*;
 import java.time.format.DateTimeFormatter;
 
-public class ReceiptWriter  {
-    private String outPutPath;
+/**
+ * Handles writing order receipts to text files using BufferedWriter.
+ *
+ * Each order is saved in a separate file named:
+ *   yyyyMMdd-HHmmss.txt
+ * inside the outputPath folder.
+ */
+public class ReceiptWriter {
 
-    public ReceiptWriter(String outPutPath) {
-        this.outPutPath = outPutPath;
+    private final String outputPath;
+
+    // Formatter for the file name (same pattern as the assignment)
+    private static final DateTimeFormatter FILE_FORMATTER =
+            DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
+
+    /**
+     * @param outputPath directory where receipt files will be stored
+     *                   (e.g., "receipts")
+     */
+    public ReceiptWriter(String outputPath) {
+        this.outputPath = outputPath;
     }
 
+    /**
+     * Generates the receipt file name for a given order.
+     * Uses the order's date/time in the format: yyyyMMdd-HHmmss.txt
+     */
+    public String generateFileName(Order order) {
+        String timestamp = order.getDateTime().format(FILE_FORMATTER);
+        return timestamp + ".txt";
+    }
 
-   public  boolean save(Order order) throws IOException {
-        // create directory if it doesn't exist
-       File directory = new File(outPutPath);
-       if (!directory.exists()){
-           boolean created = directory.mkdirs();
-           if (!created){
-               System.out.println("Could not create directory");
-               return  false;
-
-           }
-       }
-
-        String fileName = generateFileName(order);
-
-        String fullPath = outPutPath + "/" + fileName;
-
-        try (FileWriter writer = new FileWriter(fullPath)){
-            writer.write(order.generateReceipt());
-            return  true;
-
-
-        }catch (IOException e){
-            System.out.println("Error saving receipt: " + e.getMessage());
-            return  false;
+    /**
+     * Saves the receipt for the given order to a text file
+     * using BufferedWriter.
+     *
+     * @return true if the file was written successfully, false otherwise.
+     */
+    public boolean save(Order order) {
+        // Ensure the directory exists
+        File directory = new File(outputPath);
+        if (!directory.exists()) {
+            boolean created = directory.mkdirs();
+            if (!created) {
+                System.err.println("Could not create receipts directory: " + outputPath);
+                return false;
+            }
         }
 
+        String fileName = generateFileName(order);
+        File receiptFile = new File(directory, fileName);
 
-   }
-   public String generateFileName(Order order){
-
-       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
-
-       String timestamp = order.getDateAndTime().format((formatter));
-
-        return  timestamp + ".txt";
-        //return  "Receipt " + order.getId() + ".txt";
-
-
-   }
+        // Try-with-resources to automatically close the writer
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(receiptFile))) {
+            String receiptText = order.generateReceipt();
+            writer.write(receiptText);
+            return true;
+        } catch (IOException e) {
+            System.err.println("Error writing receipt file: " + e.getMessage());
+            return false;
+        }
+    }
 }

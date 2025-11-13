@@ -1,18 +1,30 @@
 package com.pluralsight.Enum;
 // Enum Representing the avalable sizes for products
+// Size.java
 
 public enum Size {
-    SMALL("Small"),
-    MEDIUM("Medium"),
-    LARGE("Large");
-    private  final String  displayName;
+    SMALL("Small", 1.0),
+    MEDIUM("Medium", 1.5),
+    LARGE("Large", 2.0);
 
-    //  contractor
-    Size(String displayName) {
-        this.displayName =  displayName;
+    private final String displayName;
+    private final double priceMultiplier;
+
+    Size(String displayName, double priceMultiplier) {
+        this.displayName = displayName;
+        this.priceMultiplier = priceMultiplier;
     }
-    // Getter methods
-    public  String getDisplayName(){
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public double getPriceMultiplier() {
+        return priceMultiplier;
+    }
+
+    @Override
+    public String toString() {
         return displayName;
     }
 }

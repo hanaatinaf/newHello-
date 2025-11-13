@@ -3,15 +3,22 @@ package com.pluralsight.Abstract;
 import com.pluralsight.Enum.Size;
 import com.pluralsight.Interfaces.Priceable;
 
-public abstract class Product  implements Priceable {
-    // private fields with protected accessors
+
+/**
+ * Base class for all products in the shop (EthiopianFoodItem, Drink, Side).
+ * It stores common fields and forces subclasses to implement calculatePrice().
+ */
+public abstract class Product implements Priceable {
+
     private String name;
     private Size size;
 
-    public Product(Size size, String name) {
-        this.size = size;
+    protected Product(String name, Size size) {
         this.name = name;
+        this.size = size;
     }
+
+    // Getters & setters
 
     public String getName() {
         return name;
@@ -29,11 +36,15 @@ public abstract class Product  implements Priceable {
         this.size = size;
     }
 
-    // abstraction method to be implemnted by subclass
-    public abstract  double calculatePrice();
+    /**
+     * Subclasses MUST provide their own price logic
+     * (using size multiplier, toppings, etc.).
+     */
+    @Override
+    public abstract double calculatePrice();
 
     @Override
-    public String toString(){
-        return String.format(("%s (%s)") , name ,size.getDisplayName());
+    public String toString() {
+        return name + " (" + size.getDisplayName() + ")";
     }
 }

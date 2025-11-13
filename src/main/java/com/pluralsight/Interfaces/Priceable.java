@@ -3,8 +3,7 @@ package com.pluralsight.Interfaces;
 // hiding implenation deatils
 
 
+// Anything that has a price (food, drink, side) must implement this.
 public interface Priceable {
-    // calcuates the price of the iteam
-    // returns total price as double 
-    double calculatePrice() ;
+    double calculatePrice();
 }

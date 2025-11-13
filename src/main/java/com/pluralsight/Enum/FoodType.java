@@ -1,6 +1,6 @@
 package com.pluralsight.Enum;
 
-public enum  ItemType {
+public enum FoodType {
     INJERA_COMBO("Injera Combo"),
     TIBS_PLATE("Tibs Plate"),
     KITFO_PLATE("Kitfo Plate"),
@@ -8,10 +8,15 @@ public enum  ItemType {
 
     private final String displayName;
 
-    ItemType(String displayName) {
+    FoodType(String displayName) {
         this.displayName = displayName;
     }
     public String getDisplayName(){
         return displayName;
     }
+    @Override
+    public String toString() {
+        return displayName;
+    }
+
 }
