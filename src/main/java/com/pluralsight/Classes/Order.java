@@ -109,10 +109,10 @@ public class Order {
         StringBuilder sb = new StringBuilder();
 
         // Header
-        sb.append("===== Ethiopian Restaurant Receipt =====\n");
+        sb.append("===== Ethiopian Restaurant Receipt =====");
         sb.append("Order ID : ").append(id).append("\n");
         sb.append("Date/Time: ").append(dateTime).append("\n");
-        sb.append("---------------------------------------\n");
+        sb.append("=============================================");
 
         // Line items
         for (Product product : products) {
@@ -122,8 +122,8 @@ public class Order {
             sb.append(line);
         }
 
-        sb.append("---------------------------------------\n");
-        sb.append(String.format("TOTAL: %34.2f\n", calculateTotal()));
+        sb.append("=============================================");
+        sb.append(String.format("TOTAL: %34.2f ", calculateTotal()));
         sb.append("=======================================\n");
 
         return sb.toString();

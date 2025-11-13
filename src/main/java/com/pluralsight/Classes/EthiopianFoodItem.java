@@ -1,6 +1,7 @@
 package com.pluralsight.Classes;
 
 import com.pluralsight.Abstract.Item;
+import com.pluralsight.Abstract.Topping;
 import com.pluralsight.Classes.Toppings.PremiumTopping;
 import com.pluralsight.Classes.Toppings.RegularTopping;
 import com.pluralsight.Enum.FoodType;
@@ -19,12 +20,8 @@ public class EthiopianFoodItem extends Item {
     private static final double SPECIAL_MEDIUM_EXTRA = 1.50;
     private static final double SPECIAL_LARGE_EXTRA  = 2.00;
 
-    /**
-     * Public constructor used by your UI when the customer builds
-     * their own plate step-by-step.
-     *
-     * By default, we set the "name" to the FoodType display name.
-     */
+    /* Public constructor used by your UI when the customer builds their own plate step-by-step.
+     By default, we set the "name" to the FoodType display name. */
     public EthiopianFoodItem(FoodType type, Size size) {
         super(type.getDisplayName(), size, type);
     }
@@ -35,45 +32,51 @@ public class EthiopianFoodItem extends Item {
      * 2) + toppings total
      * 3) + specialized extra (if isSpecialized == true)
      */
+
     @Override
     public double calculatePrice() {
         double basePrice;
 
-        switch (getSize()) {
-            case SMALL:
-                basePrice = BASE_SMALL;
+        // 1) Base price by food type (you can adjust these numbers)
+        switch (getType()) {
+            case INJERA_COMBO:
+                basePrice = 19.00;
                 break;
-            case MEDIUM:
-                basePrice = BASE_MEDIUM;
+            case TIBS_PLATE:
+                basePrice = 18.00;
                 break;
-            case LARGE:
-                basePrice = BASE_LARGE;
+            case KITFO_PLATE:
+                basePrice = 20.88;
+                break;
+            case BEYAYNETU:
+                basePrice = 25.99;
                 break;
             default:
-                basePrice = 0.0;
+                basePrice = 9.00;
+                break;
         }
 
-        // 2) Add toppings cost
-        double toppingsTotal = calculateToppingsTotal();
-        double total = basePrice + toppingsTotal;
+        // 2) Apply size multiplier (from your Size enum)
+        double sizeMultiplier = getSize().getPriceMultiplier();
+        double price = basePrice * sizeMultiplier;
 
-        // 3) Add specialization charge if needed
+        // 3) Add special customization charge
         if (isSpecialized()) {
-            switch (getSize()) {
-                case SMALL:
-                    total += SPECIAL_SMALL_EXTRA;
-                    break;
-                case MEDIUM:
-                    total += SPECIAL_MEDIUM_EXTRA;
-                    break;
-                case LARGE:
-                    total += SPECIAL_LARGE_EXTRA;
-                    break;
+            // Example: add 2.00 times the size multiplier
+            double specialCharge = 2.00 * sizeMultiplier;
+            price += specialCharge;
+        }
+
+        // 4) Add toppings cost (regular + premium)
+        if (getToppings() != null && !getToppings().isEmpty()) {
+            for (Topping t : getToppings()) {
+                price += t.getPrice(getSize());
             }
         }
 
-        return total;
+        return price;
     }
+
 
     // --------------------------------------------------------------------
     // Signature item factory methods (like BLT / Philly in DELI example)

@@ -14,8 +14,8 @@ public class RegularTopping extends Topping {
         super(name);
 
         // Regular toppings are "included", so set all size prices to 0.
-        setPrice(Size.SMALL, 0.0);
-        setPrice(Size.MEDIUM, 0.0);
-        setPrice(Size.LARGE, 0.0);
+        setPrice(Size.SMALL, 3.00);
+        setPrice(Size.MEDIUM, 4.50);
+        setPrice(Size.LARGE, 5.00);
     }
 }
