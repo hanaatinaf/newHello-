@@ -40,6 +40,7 @@ public class UIController {
         System.out.println("     Welcome! |  ሰላም እንኳን በደህና መጡ!  ✨");
         System.out.println();
     }
+
     public void start() {
         printRestaurantBanner();
         while (true) { homeScreen(); } }
