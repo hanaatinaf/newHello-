@@ -1,0 +1,17 @@
+===== Ethiopian Restaurant Receipt =====
+Order ID : 20251114-122127
+Date/Time: 2025-11-14T12:21:27.528311
+---------------------------------------
+Beyaynetu Vegetarian (Medium)   44.24
+   Details:
+     Base (Beyaynetu Vegetarian x 1.50): 38.99
+     Special add-on:      3.00
+     Toppings:
+       • Bozena Shiro (Meat Chickpea Stew)  2.25
+     Toppings total:      2.25
+
+Drink (Large)                    3.00
+Ethiopian Cottage Cheese (Medium)   1.50
+---------------------------------------
+TOTAL:                             48.74
+=======================================
