@@ -3,7 +3,6 @@ package com.pluralsight.Classes.Drink;
 import com.pluralsight.Abstract.Product;
 import com.pluralsight.Enum.Size;
 
-
 public class Drink extends Product {
 
     private String flavor;
