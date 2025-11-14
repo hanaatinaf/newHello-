@@ -1,0 +1,16 @@
+===== Ethiopian Restaurant Receipt =====
+Order ID : 20251113-204406
+Date/Time: 2025-11-13T20:44:06.586637
+---------------------------------------
+Injera Combo (Medium)           39.75
+   Details:
+     Base (Injera Combo x 1.50): 28.50
+     Special add-on:      3.00
+     Toppings:
+       • Fosolia (Green Beans & Carrots)  4.50
+       • Extra Kitfo (EXTRA)  3.75
+     Toppings total:      8.25
+
+---------------------------------------
+TOTAL:                             39.75
+=======================================
