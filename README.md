@@ -138,6 +138,7 @@ When you start the application, you’ll see the Home Screen where you can creat
 
 ---
 
+
 # 🧭 Main Menu Navigation
 
 ### **Home Screen**
@@ -151,6 +152,12 @@ When you start the application, you’ll see the Home Screen where you can creat
 ---
 
 # 🔧 Code Overview
+⭐ My Favorite Code Snippet
+
+I chose this code because it is small, clean, and powerful. Even though it looks simple, it shows good object-oriented design and modern Java style.
+Instead of using a long loop, this one line uses a Java stream to add all the prices together.
+
+<img width="993" height="177" alt="Screenshot 2025-11-14 at 12 50 29 PM" src="https://github.com/user-attachments/assets/20ee2da5-2e41-493a-8635-39f61fd230c9" />
 
 
 ### 🔹 **Abstract Classes**
@@ -193,7 +200,9 @@ When you start the application, you’ll see the Home Screen where you can creat
 
 ---
 ### 🧾 Start New Order
-![ORDERSCREEN.png](Images/ORDERSCREEN.png)
+<img width="993" height="233" alt="Screenshot 2025-11-14 at 12 56 16 PM" src="https://github.com/user-attachments/assets/304758da-4d68-41cc-95d8-35f1fec0bdca" />
+
+
 ---
 
 ### 🍽️ Add Ethiopian Food Item — Regular Plate
