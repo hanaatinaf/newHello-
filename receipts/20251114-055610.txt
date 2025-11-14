@@ -1,0 +1,17 @@
+===== Ethiopian Restaurant Receipt =====
+Order ID : 20251114-055610
+Date/Time: 2025-11-14T05:56:10.765954
+---------------------------------------
+Kitfo Plate (Medium)            38.07
+   Details:
+     Base (Kitfo Plate x 1.50): 31.32
+     Special add-on:      3.00
+     Toppings:
+       • Extra Tibs (EXTRA)  3.75
+     Toppings total:      3.75
+
+Drink (Large)                    3.00
+Spicy Chili Powder Mix (Medium)   1.50
+---------------------------------------
+TOTAL:                             42.57
+=======================================

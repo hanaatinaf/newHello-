@@ -1,0 +1,15 @@
+===== Ethiopian Restaurant Receipt =====
+Order ID : 20251114-054348
+Date/Time: 2025-11-14T05:43:48.098438
+---------------------------------------
+Tibs Plate (Medium)             30.00
+   Details:
+     Base (Tibs Plate x 1.50): 27.00
+     Special add-on:      3.00
+     (No toppings)
+
+Drink (Medium)                   2.50
+Spicy Chili Powder Mix (Medium)   1.50
+---------------------------------------
+TOTAL:                             34.00
+=======================================

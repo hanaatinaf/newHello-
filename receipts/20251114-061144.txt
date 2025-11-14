@@ -1,0 +1,18 @@
+===== Ethiopian Restaurant Receipt =====
+Order ID : 20251114-061144
+Date/Time: 2025-11-14T06:11:44.822851
+---------------------------------------
+Beyaynetu Vegetarian (Large)    65.23
+   Details:
+     Base (Beyaynetu Vegetarian x 2.00): 51.98
+     Special add-on:      4.00
+     Toppings:
+       • Fosolia (Green Beans & Carrots)  5.00
+       • Extra Tibs (EXTRA)  4.25
+     Toppings total:      9.25
+
+Drink (Large)                    3.00
+Fresh Salad (Medium)             1.50
+---------------------------------------
+TOTAL:                             69.73
+=======================================
