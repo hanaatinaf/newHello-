@@ -1,6 +1,6 @@
 package com.pluralsight.Classes;
 
-
+import com.pluralsight.Abstract.*;
 import com.pluralsight.Classes.Toppings.ToppingMenu;
 import com.pluralsight.Enum.FoodType;
 import com.pluralsight.Enum.Size;
@@ -8,8 +8,7 @@ import com.pluralsight.Enum.Size;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-
- // Handles all Ethiopian food (main plate) flows: , regular plate , custom plate
+// Handles all Ethiopian food (main plate) flows: signature/regular plate, custom plate
 public class FoodMenu {
     private final Scanner scanner;
     private final ToppingMenu toppingMenu;
@@ -18,15 +17,15 @@ public class FoodMenu {
         this.scanner = scanner;
         this.toppingMenu = toppingMenu;
     }
-     // Entry point when the user chooses "Add Ethiopian Food Item" from UIController.
-     // Shows regular/custom menu and adds the chosen item to the given Order.
 
+    // Entry point when the user chooses "Add Ethiopian Food Item" from UIController.
+    // Shows regular/custom menu and adds the chosen item to the given Order.
     public void addEthiopianFoodItemToOrder(Order order) {
         System.out.println();
         System.out.println("🍽️ ADD ETHIOPIAN FOOD ITEM");
         System.out.println("=======================================");
-        System.out.println("1) 🍛  Regular Ethiopian Plate)");
-        System.out.println("2) 🧩  Custom Ethiopian Plate)");
+        System.out.println("1) 🌟 Signature Ethiopian Plate (pre-built combo)");
+        System.out.println("2) 🧩 Custom Ethiopian Plate (build your own)");
         System.out.println("0) ↩️ Back ");
         System.out.print("👉  Choose an option: ");
 
@@ -34,7 +33,7 @@ public class FoodMenu {
 
         switch (choice) {
             case 1:
-                handleRegularPlate(order);
+                handleSignaturePlate(order);
                 break;
             case 2:
                 handleCustomPlate(order);
@@ -46,39 +45,56 @@ public class FoodMenu {
                 System.out.println("⚠️  Invalid option.");
         }
     }
-     // Handles the flow for a pre-defined "regular" Ethiopian plate.
 
-    private void handleRegularPlate(Order order) {
+    // 🔹 New: Signature / Regular Plate uses your createXxx() templates
+    private void handleSignaturePlate(Order order) {
         // 1) Choose size
         Size size = promptForSize();
 
-        // 2) Choose which regular plate, showing descriptions
+        // 2) Choose which signature plate, showing descriptions
         FoodType type = promptForRegularFoodTypeWithDescriptions();
 
-        // 3) Create the item
-        EthiopianFoodItem item = new EthiopianFoodItem(type, size);
+        // 3) Create the item using your signature factories
+        EthiopianFoodItem item = createSignatureItem(type, size);
 
-        // 4) Ask if the customer wants to customize this plate
-        System.out.print("🔧  Would you like to add extra toppings? (y/n): ");
+        // 4) Ask if the customer wants to customize this signature plate
+        System.out.print("🔧  Would you like to add extra toppings to this signature plate? (y/n): ");
         String customizeInput = scanner.next().trim().toLowerCase();
 
         if (customizeInput.startsWith("y")) {
             item.setSpecialized(true);
-            toppingMenu.promptForToppings(item);
+            toppingMenu.promptForToppings(item);   // only adds more on top of defaults
         } else {
             item.setSpecialized(false);
-            System.out.println("👌  Regular plate selected (no extra customization).");
+            System.out.println("👌  Signature plate selected (no extra customization).");
         }
 
         // 5) Add to order
         order.addProduct(item);
-        System.out.printf("✅  %s  Added to order. Current total: %.2f%n",
+        System.out.printf("✅  Signature %s  Added to order. Current total: %.2f%n",
                 item.getName(), order.calculateTotal());
 
         System.out.println("↩️ Returning to order screen...");
     }
-     // Handles the flow for a build-your-own custom plate.
 
+    // Helper: map FoodType → your static factory methods
+    private EthiopianFoodItem createSignatureItem(FoodType type, Size size) {
+        switch (type) {
+            case BEYAYNETU:
+                return EthiopianFoodItem.createBeyaynetu(size);
+            case TIBS_PLATE:
+                return EthiopianFoodItem.createTibsPlate(size);
+            case KITFO_PLATE:
+                return EthiopianFoodItem.createKitfoPlate(size);
+            case INJERA_COMBO:
+                return EthiopianFoodItem.createInjeraCombo(size);
+            default:
+                // Fallback: simple item with no defaults
+                return new EthiopianFoodItem(type, size);
+        }
+    }
+
+    // 🔹 Custom build-your-own plate (your original custom flow)
     private void handleCustomPlate(Order order) {
         // 1) Choose size
         Size size = promptForSize();
@@ -101,6 +117,7 @@ public class FoodMenu {
 
         System.out.println("↩️ Returning to order screen:");
     }
+
     // helpers just for this menu
     private Size promptForSize() {
         System.out.println("📏  Choose size:");
@@ -112,6 +129,7 @@ public class FoodMenu {
         int choice = readIntInRange(1, sizes.length);
         return sizes[choice - 1];
     }
+
     private FoodType promptForRegularFoodTypeWithDescriptions() {
         System.out.println("🍛  መደበኛ የኢትዮጵያ ምግቦች | Regular Ethiopian Plates:");
         FoodType[] types = FoodType.values();
@@ -139,6 +157,7 @@ public class FoodMenu {
         int choice = readIntInRange(1, types.length);
         return types[choice - 1];
     }
+
     private int readInt() {
         while (true) {
             try {
@@ -146,8 +165,10 @@ public class FoodMenu {
             } catch (InputMismatchException e) {
                 System.out.print("Please enter a valid number: ");
                 scanner.next(); // clear invalid input
-            } }
+            }
+        }
     }
+
     private int readIntInRange(int min, int max) {
         int value;
         while (true) {
