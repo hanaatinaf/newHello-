@@ -14,12 +14,13 @@ This project highlights clean OOP, interfaces, inheritance, enums, and file hand
 *Created as part of the Java Focus Academy program (Capstone-style project).*
 
 ---
-
+# 🎥 GIF Demo
+![GIFDemo.gif](Images/GIFDemo.gif)
 
 
 ## 📋 Table of Contents
 
-* [Features](#features)
+* ✨  [Features](#features)
 * [Project Structure](#project-structure)
 * [Installation](#installation)
 * [Usage](#usage)
@@ -135,19 +136,16 @@ When you start the application, you’ll see the Home Screen where you can creat
 # 🧭 Main Menu Navigation
 
 ### **Home Screen**
-<img width="595" height="266" alt="Screenshot 2025-11-14 at 12 45 03 AM" src="https://github.com/user-attachments/assets/604b2bc5-3842-439a-92dd-c4d6adcf55cf" />
-
+![HomeScreen.png](Images/HomeScreen.png)
 
 
 ### **Order Screen**
 
-<img width="681" height="266" alt="Screenshot 2025-11-14 at 12 46 40 AM" src="https://github.com/user-attachments/assets/9ac3f51f-d782-43be-870a-e08508c91e0a" />
-
+![ORDERSCREEN.png](Images/ORDERSCREEN.png)
 ---
 
 # 🔧 Code Overview
 
-Your application uses clean OOP principles:
 
 ### 🔹 **Abstract Classes**
 
@@ -177,34 +175,28 @@ Your application uses clean OOP principles:
 
 # 🗃️ UML Diagram
 
-<img width="1818" height="1902" alt="B7C3410F-DD40-42C5-9538-F16158FB82EA" src="https://github.com/user-attachments/assets/8a5f79c8-5437-4f67-a201-eb7970eabe2e" />
-
+![B7C3410F-DD40-42C5-9538-F16158FB82EA.png](Images/B7C3410F-DD40-42C5-9538-F16158FB82EA.png)
 
 ---
 
 # 📊 Sample Output
 
 ### 🏠 Home Screen
-<img width="757" height="318" alt="Screenshot 2025-11-13 at 11 46 22 PM" src="https://github.com/user-attachments/assets/49799c05-fa37-471e-a14b-3f4fa3d90720" />
 
-
+![HomeScreen.png](Images/HomeScreen.png)
 
 ---
-
 ### 🧾 Start New Order
-<img width="757" height="318" alt="Screenshot 2025-11-13 at 11 46 48 PM" src="https://github.com/user-attachments/assets/427c8cb1-360a-45d0-85cd-3d5532f76069" />
-
+![ORDERSCREEN.png](Images/ORDERSCREEN.png)
 ---
 
 ### 🍽️ Add Ethiopian Food Item — Regular Plate
-<img width="757" height="562" alt="Screenshot 2025-11-13 at 11 48 31 PM" src="https://github.com/user-attachments/assets/28cb3485-df14-4cb2-bef8-c32d0f2dfb2f" />
-
+![RegularPlate.png](Images/RegularPlate.png)
 
 ---
 
 ### 🧩 Custom Plate — Size Selection
-<img width="757" height="562" alt="Screenshot 2025-11-13 at 11 49 09 PM" src="https://github.com/user-attachments/assets/cde1230e-9d87-48f1-b02a-726f7ce433db" />
-
+![CustomPlate.png](Images/CustomPlate.png)
 ---
 
 ### 🍛 Choose Base Plate
@@ -214,67 +206,58 @@ Your application uses clean OOP principles:
 ---
 
 ### ➕ Add Toppings
-<img width="757" height="773" alt="Screenshot 2025-11-13 at 11 50 39 PM" src="https://github.com/user-attachments/assets/d7625e4d-dfac-4ebb-9e86-fd55783ce652" />
 
+![Topping.png](Images/Topping.png)
 
 ---
 
+###  Add Regular Toppings
+![RegularPlate.png](Images/RegularPlate.png)
+
 ### 🌶️ Add Premium Toppings
-<img width="757" height="773" alt="Screenshot 2025-11-13 at 11 50 39 PM" src="https://github.com/user-attachments/assets/725ef6b5-8d42-4f47-879f-0836c7560616" />
-
-
+![PremiumToppings.png](Images/PremiumToppings.png)
 ---
 
 ### 🥤 Add Drink
-<img width="729" height="455" alt="Screenshot 2025-11-13 at 11 51 29 PM" src="https://github.com/user-attachments/assets/7f686014-dd22-425e-88a2-fcfe1a495190" />
 
+![ ADDDRINK.png](Images/%20ADDDRINK.png)
 
 
 ---
 
 ### 🧺 Order Screen After Adding Items
-<img width="729" height="690" alt="Screenshot 2025-11-13 at 11 52 54 PM" src="https://github.com/user-attachments/assets/03477d77-0e0a-416c-9191-9847d44605fb" />
 
-
-
+![OrderScreeAfterAdding .png](Images/OrderScreeAfterAdding%20.png)
 ---
 
 ### 🧾 Checkout — Receipt Preview
-<img width="729" height="690" alt="Screenshot 2025-11-13 at 11 52 54 PM" src="https://github.com/user-attachments/assets/e12823f0-34cb-4c8e-a519-3b0de5f15963" />
-
+![ CHECKOUT.png](Images/%20CHECKOUT.png)
 
 ---
 
 ### 🥗 Add Side
-<img width="595" height="612" alt="Screenshot 2025-11-14 at 12 03 56 AM" src="https://github.com/user-attachments/assets/49de2a5c-8c65-4cf4-8856-8866f0405703" />
-
+![ADDSIDE.png](Images/ADDSIDE.png)
 
 ---
 
 ### 🥤 Add Drink (Large)
-<img width="595" height="671" alt="Screenshot 2025-11-14 at 12 05 01 AM" src="https://github.com/user-attachments/assets/e42504cd-b421-4188-a27e-0ec534b64a9b" />
 
-
+![LargeDrink.png](Images/LargeDrink.png)
 
 ---
 
 ### ❌ Cancel Order
 
-<img width="595" height="671" alt="Screenshot 2025-11-14 at 12 05 01 AM" src="https://github.com/user-attachments/assets/e42504cd-b421-4188-a27e-0ec534b64a9b" />
-
-
+![CancelOrder.png](Images/CancelOrder.png)
 
 ---
 
-# 🎥 GIF Demo
-
-(*Upload your MP4 or MOV and I will convert it into a clean GIF demo for you and embed it here.*)
 
 ---
 
 # 🛠️ Technologies Used
 
-* **Java 21+**
+* **Java**
 * **Java Time API**
 * **Scanner for user input**
 * **File I/O for receipt saving**
